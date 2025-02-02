@@ -41,6 +41,9 @@ function formatName(name) {
 //#region Tests --------------------------------------------------------------------
 // Write your tests her.
 
+test("test1").isEqual(formatName("john doe"), "John Doe", "john doe => John Doe");
+test("test2").isEqual(formatName("john"), "John", "john => John");
+
 
 
 //#endregion
