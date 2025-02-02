@@ -20,13 +20,15 @@ import test from "./test.mjs";
 //#region function -----------------------------------------------------------------
 // Write your function her.
 
-function multiply(...args) {
-    return args.reduce((product, current) => {
-        let num = parseFloat(current);
-        if (isNaN(num)) return NaN;
-        return product * num;
-    }, 1);
-}
+function multiply(...theArgs) {
+    let product = 1;
+    for (const arg of theArgs) {
+      let num = Number(arg);
+      if (isNaN(num)) return NaN;
+      product *= num;
+    }
+    return product;
+  }
 //#endregion
 
 
@@ -37,5 +39,5 @@ function multiply(...args) {
 // Write your tests her.
 
 test("test1").isEqual(multiply(2, 3), 6, "2 * 3 = 6");
-
+test("test2").isEqual(multiply(2, 3, 4), 20, "2 * 3 * 4 = 24");
 //#endregion
