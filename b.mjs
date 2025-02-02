@@ -20,7 +20,17 @@ import test from "./test.mjs";
 //#region function -----------------------------------------------------------------
 // Write your function her.
 
+function formatName(name) {
 
+    if (typeof name !== 'string') return null;
+    name = name.trim();
+    if (!name) return '';
+    if (/[^a-zA-Z\s]/.test(name)) return null;
+    name = name.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+  
+    return name;
+  }
+  
 
 //#endregion
 
