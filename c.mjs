@@ -10,10 +10,17 @@ import test from "./test.mjs";
     Good luck!
 */
 
-function sequence(n) {
-    if (typeof n !== 'number' || \n < 0 || !Number.isInteger(n)) return null;
-
-}
+function sequence(n, d = 1) {
+    // Step 1: Check if input is a non-negative integer
+    if (typeof n !== 'number' || n < 0 || !Number.isInteger(n)) {
+      return null;
+    }
+    const result = [];
+    for (let i = 0; i <= n; i++) {
+      result.push(i * d);
+    }
+    return result;
+  }
 
 //#region Tests --------------------------------------------------------------------
 const tests = test("Sum function");
