@@ -11,15 +11,21 @@ import test from "./test.mjs";
 */
 
 function sequence(n, d = 1) {
-    // Step 1: Check if input is a non-negative integer
+
     if (typeof n !== 'number' || n < 0 || !Number.isInteger(n)) {
       return null;
     }
-    const result = [];
-    for (let i = 0; i <= n; i++) {
-      result.push(i * d);
+    if (n === 0) return 0;
+    if (n === 1) return 1;
+  
+    let a = 0, b = 1;
+    for (let i = 2; i <= n; i++) {
+      let temp = a + b;
+      a = b;
+      b = temp;
     }
-    return result;
+  
+    return b;
   }
 
 //#region Tests --------------------------------------------------------------------
