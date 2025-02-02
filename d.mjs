@@ -26,6 +26,15 @@ import test from "./test.mjs";
 function guessNumber(target, guess) {
     if (!Number.isInteger(target) || !Number.isInteger(guess)) {
         return null;
+    }
+        if (guess < target) {
+            return "Too low";
+          } else if (guess > target) {
+            return "Too high";
+          } else {
+            return "Correct!";
+          }
+        
 }
 
 
